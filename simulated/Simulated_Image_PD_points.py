@@ -188,13 +188,11 @@ for idx, deg in enumerate(degs):
     xptsv, yptsv = pts_xv * (n-1), pts_yv * (m-1)
     
     PDptsv = np.matrix(np.vstack((np.array((xptsv/(n-1)).T), np.array((yptsv/(m-1)).T))).T)
-    Pti_Mirko = PDptsv.copy() #TEMPORARY
+    Pti_Mirko = PDptsv.copy() 
     
     fvalv = [Image[int(np.floor(yptsv[i])), int(np.floor(xptsv[i]))] for i in range(xptsv.shape[0])]
     fvalv = np.matrix(fvalv).T
-    fvalv_Mirko = fvalv.copy() #TEMPORARY
-
-    # DA QUI IN POI DOBBIAMO SOSTITUIRE FVAL CON FVAL_MIRKO+1
+    fvalv_Mirko = fvalv.copy()
     
     threshold = fvalv > 0
     extra_ds = np.zeros(fvalv.shape) 
@@ -230,7 +228,7 @@ for idx, deg in enumerate(degs):
     rmse = mse(Imageapprox,Image); 
     rmse1 = mse(Imageapprox1,Image)
     
-    #TEMP
+    #
     print('MSE for polynomials: %.3e' %rmse)
     print('MSE for VSDKs: %.3e' %rmse1)
     #

@@ -368,7 +368,6 @@ for idx, deg in enumerate(degs):
     coef = np.linalg.solve(IM1, fval)
     Pf = (EM1.dot(coef))
     
-    #OK
     t3 = time.time()
     
     # Compute accuracy indicators (psnr and mse)
@@ -380,7 +379,6 @@ for idx, deg in enumerate(degs):
     Imageapprox = Image.flatten()
     Imageapprox[samplepointsIndex] = lsp.T
     Imageapproxs = np.reshape(Imageapprox, (sx,sy))
-    #OK
     
     snr1 = psnr(Image, Imageapproxs1, (Pf.shape[0]))
     rmse1 = mse(Imageapproxs1, Image, (Pf.shape[0]))
@@ -409,7 +407,7 @@ for idx, deg in enumerate(degs):
     PSNR_VSDK.append(snr1)
     PSNR_POLY.append(snr)
     
-    #TEMP
+    #
     print(rmse1)
     print(rmse)
     #
